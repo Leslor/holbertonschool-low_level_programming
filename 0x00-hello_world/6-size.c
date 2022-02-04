@@ -15,7 +15,7 @@ int main(void)
 	float type5;
 	
 	printf ("Size of a char: %d byte(s)\n", sizeof(type1));
-	printf ("Size of a int: %d byte(s)\n", sizeof(type2));
+	printf ("Size of an int: %d byte(s)\n", sizeof(type2));
 	printf ("Size of a long int: %d byte(s)\n", sizeof(type3));
 	printf ("Size of a long long int: %d byte(s)\n", sizeof(type4));
 	printf ("Size of a float: %d byte(s)\n", sizeof(type5));
