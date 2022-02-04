@@ -1,9 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-/* main - code  */
-
-/* betty style doc for function main goes there */
+/**
+  * main - code
+  * Return: 0
+  */
 int main(void)
 {
 	int n;
