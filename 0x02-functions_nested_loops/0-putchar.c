@@ -1,7 +1,4 @@
-#include "main.h
-
-/*function declaration*/
-char _putchar(char c);
+#include "main.h" 
 
 /**
   * main - print a space
