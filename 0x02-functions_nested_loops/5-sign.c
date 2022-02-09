@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
-  * _islower - print the alphabet
+  * print_sign -  prints the sign of a number
   * @n: value for conditional
   * Return: 0 , 1 or -1 depend of the returs
   */
@@ -14,12 +14,12 @@ int print_sign(int n)
 	}
 	else if (n < 0)
 	{
-		_putchar(48);
+		_putchar(45);
 		return (-1);
 	}
 	else
 	{
-		_putchar(45);
+		_putchar(48);
 		return (0);
 	}
 }
