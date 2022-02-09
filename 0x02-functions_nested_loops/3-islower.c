@@ -2,7 +2,8 @@
 
 /**
   * _islower - print the alphabet
-  * Return: 0
+  * @c: value for conditional
+  * Return: 0 or 1
   */
 int _islower(int c)
 {
