@@ -1,10 +1,9 @@
-#include "main.h" 
+#include "main.h"
 
 /**
   * main - print a space
-  * Return : 0
+  * Return: 0
   */
-
 int main(void)
 {
 	char c[] = "_putchar";
