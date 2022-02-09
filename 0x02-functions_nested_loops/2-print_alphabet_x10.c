@@ -13,9 +13,9 @@ void print_alphabet_x10(void)
 	for (x = 0; x < 10; ++x)
 	{
 		for (i = 97; i < 123; i++)
-			{
-				_putchar(i);
-			}	
+		{
+			_putchar(i);
+		}
 		_putchar('\n');
 	}
 }
