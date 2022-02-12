@@ -3,7 +3,7 @@
 
 /**
   * print_to_98- prints a number until 98
-  * @n- parameter that count until will be in the 98
+  * @n: parameter that count until will be in the 98
   * Return: ...
   */
 void print_to_98(int n)
