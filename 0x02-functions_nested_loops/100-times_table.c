@@ -8,7 +8,7 @@ void print_times_table(int n)
 {
 	int r, c, ans;
 
-	if (n < 16 && n > 0)
+	if (n < 16 && n >= 0)
 	{
 		for (r = 0; r <= n; r++)
 		{
