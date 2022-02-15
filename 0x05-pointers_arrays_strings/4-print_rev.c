@@ -1,25 +1,24 @@
 #include "main.h"
 /**
-  * _strlen -  function that returns the length of a string
+  * print_rev -  function that returns the length of a string
   * @s: ..
   * Return: returns the length of a string
   */
-
 void print_rev(char *s)
 {
 	int i = 0;
-	int counter;
 
 	while (*s != '\0')
 	{
 		i++;
 		s++;
 	}
-
-	for (counter = i; counter >= 0; counter--)
-	{
-	_putchar(*s);
 	s--;
+	while (i > 0)
+	{
+		_putchar(*s);
+		s = s - 1;
+		i--;
 	}
 	_putchar(10);
 }
