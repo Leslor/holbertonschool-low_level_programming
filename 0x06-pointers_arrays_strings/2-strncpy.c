@@ -2,7 +2,7 @@
 #include <stdio.h>
 /**
   * _strncpy - function that  copy a String.
-  * @dest:1
+  * @dest:3231
   * @src: str2
   * @n: Number of elements
   * Return: return dest
