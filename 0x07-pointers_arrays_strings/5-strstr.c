@@ -19,7 +19,7 @@ char *_strstr(char *haystack, char *needle)
 			if (needle[i] == haystack[j])
 			{
 				counter++;
-				match = &haystack[j];
+				match = &haystack[i+j];
 				break;
 			}
 			j++;
