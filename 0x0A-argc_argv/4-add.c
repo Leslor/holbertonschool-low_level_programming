@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 /**
- * main: main functions
+ * main - main functions
  * @argc: argument count
  * @argv: pointer to a string
  * Return: print all argv
@@ -13,7 +13,7 @@ int main(int argc, char *argv[])
 	int i;
   unsigned int k, sum = 0;
 	char *j;
-
+	
 	if (argc > 1)
 	{
 		for (i = 1; i < argc; i++)

@@ -1,13 +1,13 @@
 #include <stdio.h>
 #include <stdlib.h>
 /**
- * main: main functions
+ * main - main functions
  * @argc: argument count
  * @argv: pointer to a string
  * Return: print all argv
  */
 
-int main (int argc, char *argv[])
+int main(int argc, char *argv[])
 {
 	int result;
 
