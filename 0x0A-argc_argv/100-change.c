@@ -2,14 +2,11 @@
 #include <stdlib.h>
 #include <string.h>
 /**
- * main - main functions
- * @argc: argument count
- * @argv: pointer to a string
- * Return: print all argv
  * _change - make change for an amount of money
  * @i: iterator for the array
  * @money: the amount to change with coins
  * @numcoins: number of coins used for change
+ * Return: return the value of counts
  */
 int _change(int i, int money, int numcoins)
 {
@@ -18,22 +15,28 @@ int _change(int i, int money, int numcoins)
 	while (money > 0)
 	{
 		if (coins[i] > money)
-			return _change(i+1, money, numcoins);
+			return (_change(i + 1, money, numcoins));
 		else if (coins[i] == money)
 		{
-			numcoins +=1;
+			numcoins += 1;
 			return (numcoins);
 		}
 		if (coins[i] < money)
 		{
-			numcoins +=1;
+			numcoins += 1;
 			money = money - coins[i];
-			return _change(i, money, numcoins);
+			return (_change(i, money, numcoins));
 		}
 	}
 	return (0);
 }
 
+/**
+  * main - main functions
+  * @argc: argument count
+  * @argv: pointer to a string
+  * Return: print all argv
+  */
 int main(int argc, char *argv[])
 {
 	int money, result;
