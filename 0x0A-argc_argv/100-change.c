@@ -38,7 +38,7 @@ int main(int argc, char *argv[])
 {
 	int money, result;
 
-	if ((argc != 2 || *argv[1] < 48 || *argv[1] > 57) && *argv[1] != 45)
+	if (argc != 2)
 	{
 		printf("Error\n");
 		return (1);
