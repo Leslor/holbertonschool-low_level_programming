@@ -1,4 +1,4 @@
-#include<stdio.h>
+#include <stdlib.h>
 
 /**
  * _calloc - function that allocates memory for an array
@@ -11,14 +11,14 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 {
 	char *ptr;
 	int lens, i = 0;
-	
+
 	if (nmemb == 0 || size == 0)
 		return (NULL);
 	lens = nmemb * size;
-	ptr = malloc (lens);
+	ptr = malloc(lens);
 	if (ptr == NULL)
 		return (NULL);
-	for(i = 0; i <= lens; i++)
+	for (i = 0; i <= lens; i++)
 		ptr[i] = '0';
-	return (ptr);      
+	return (ptr);
 }
