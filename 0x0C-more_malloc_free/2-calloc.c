@@ -18,7 +18,7 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 	ptr = malloc(lens);
 	if (ptr == NULL)
 		return (NULL);
-	for (i = 0; i <= lens; i++)
+	for (i = 0; i < lens; i++)
 		ptr[i] = 0;
 	return (ptr);
 }
