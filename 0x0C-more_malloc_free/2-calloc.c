@@ -10,14 +10,13 @@
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
 	char *ptr;
-	unsigned int lens, i = 0;
+	unsigned int lens, i;
 
 	if (nmemb == 0 || size == 0)
 		return (NULL);
 	lens = nmemb * size;
 	ptr = malloc(lens);
 	if (ptr == NULL)
-		free(ptr);
 		return (NULL);
 	for (i = 0; i <= lens; i++)
 		ptr[i] = 0;
