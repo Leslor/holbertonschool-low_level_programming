@@ -1,0 +1,2 @@
+**Structures**
+A structure is a key word that create user defined data type in C/C++. A structure creates a data type that can be used to group items of possibly different types into a single type.
