@@ -11,5 +11,5 @@
 void print_name(char *name, void (*f)(char *))
 {
 	/* Invoking print_name_asis() using f */
-	f(name);
+	(*f)(name);
 }
