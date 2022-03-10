@@ -1,12 +1,12 @@
 #include "variadic_functions.h"
 /**
-  * print_numbers - function that prints numbers, followed by a new line
+  * print_strings - function that prints string, followed by a new line
   * @separator: separator.
-  * @n: number of integers passed to the function.
-  * Return: Return the Sum or 0
+  * @n: number of string passed to the function.
+  * Return: Return nothing
   */
 void print_strings(const char *separator, const unsigned int n, ...)
-{	
+{
 	unsigned int i = 0;
 	va_list ptr;
 	char *str;
