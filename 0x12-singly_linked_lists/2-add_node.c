@@ -32,12 +32,6 @@ list_t *add_node(list_t **head, const char *str)
 	/*Validation of node NULL*/
 	if (node == NULL)
 		return (NULL);
-	/*validation of str NULL*/
-	if (str == NULL)
-	{
-		free(node);
-		return (NULL);
-	}
 	node->str = strdup(str);
 	if (node->str == NULL)
 	{
