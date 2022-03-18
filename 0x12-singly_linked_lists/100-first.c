@@ -1,5 +1,5 @@
 #include <stdio.h>
-
+void  __attribute__((constructor)) first_impression(void);
 /**
  * first_impression - Prints a string before the
  *        main function is executed.
