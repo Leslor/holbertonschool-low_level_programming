@@ -29,8 +29,12 @@ list_t *add_node(list_t **head, const char *str)
 {
 	list_t *node = malloc(sizeof(list_t));
 
+	/*Validation of node NULL*/
+	if (node == NULL)
+		return (NULL);
+	/*validation of str NULL*/
 	if (str == NULL)
-	{	
+	{
 		free(node->str);
 		return (NULL);
 	}
