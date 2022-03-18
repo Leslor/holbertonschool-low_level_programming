@@ -35,13 +35,13 @@ list_t *add_node(list_t **head, const char *str)
 	/*validation of str NULL*/
 	if (str == NULL)
 	{
-		free(node->str);
+		free(node);
 		return (NULL);
 	}
 	node->str = strdup(str);
-	if (str == NULL)
+	if (node->str == NULL)
 	{
-		free(node->str);
+		free(node);
 		return (NULL);
 	}
 	node->len = _strlen(node->str);
