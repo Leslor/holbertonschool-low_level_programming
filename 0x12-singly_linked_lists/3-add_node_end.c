@@ -45,9 +45,9 @@ list_t *add_node_end(list_t **head, const char *str)
 		ptr->next = last_node;
 	}
 	last_node->str = strdup(str);
-	if (node->str == NULL)
+	if (last_node->str == NULL)
 	{
-		free(node);
+		free(last_node);
 		return (NULL);
 	}
 	last_node->len = _strlen(last_node->str);
