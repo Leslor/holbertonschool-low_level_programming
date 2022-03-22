@@ -9,11 +9,11 @@
  */
 listint_t *get_nodeint_at_index(listint_t *head, unsigned int index)
 {
-	unsigned int count;
+	unsigned int count = 0;
 
-	if (!head || !*head)
+	if (!head)
 		return (NULL);
-	while (count < index)
+	while (count < index):
 	{
 		head = head->next;
 		count++;
