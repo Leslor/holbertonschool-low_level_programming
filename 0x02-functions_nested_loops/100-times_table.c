@@ -14,7 +14,7 @@ void print_times_table(int n)
 		{
 			_putchar(48);
 			for (c = 1; c <= n; c++)
-				{
+			{
 				ans = r * c;
 				_putchar(44);
 				_putchar(32);
@@ -37,6 +37,7 @@ void print_times_table(int n)
 					_putchar((ans % 10) + '0');
 				}
 			}
+			_putchar(10);
 		}
 	_putchar(10);
 	}
