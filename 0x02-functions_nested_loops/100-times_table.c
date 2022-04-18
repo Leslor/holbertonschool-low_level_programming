@@ -12,39 +12,32 @@ void print_times_table(int n)
 	{
 		for (r = 0; r <= n; r++)
 		{
-			for (c = 0; c <= n; c++)
-			{
-				if (c == 0)
+			_putchar(48);
+			for (c = 1; c <= n; c++)
 				{
-					_putchar(48);
-					continue;
+				ans = r * c;
+				_putchar(44);
+				_putchar(32);
+				if (ans <= 9)
+				{
+					_putchar(32);
+					_putchar(32);
+					_putchar(ans + '0');
+				}
+				else if (ans > 9 && ans < 100)
+				{
+					_putchar(32);
+					_putchar((ans / 10) + '0');
+					_putchar((ans % 10) + '0');
 				}
 				else
 				{
-					ans = r * c;
-					_putchar(44);
-					_putchar(32);
-					if (ans <= 9)
-					{
-						_putchar(32);
-						_putchar(32);
-						_putchar(ans + '0');
-					}
-					else if (ans > 9 && ans < 100)
-					{
-						_putchar(32);
-						_putchar((ans / 10) + '0');
-						_putchar((ans % 10) + '0');
-					}
-					else
-					{
-						_putchar(((ans / 10) / 10) + '0');
-						_putchar(((ans / 10) % 10) + '0');
-						_putchar((ans % 10) + '0');
-					}
+					_putchar(((ans / 10) / 10) + '0');
+					_putchar(((ans / 10) % 10) + '0');
+					_putchar((ans % 10) + '0');
 				}
 			}
-			_putchar(10);
 		}
+	_putchar(10);
 	}
 }
