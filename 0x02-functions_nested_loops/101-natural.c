@@ -1,9 +1,9 @@
 #include "main.h"
 #include <stdio.h>
 /**
-  * print_times_table -  function that prints the n times table
-  * @n: parameter that n times will be multiplied
-  * Return: the answer of each n times table
+  * main -  computes and prints the
+  * sum of all the multiples of 3 or 5 below 1024.
+  * Return: 0
   */
 int main(void)
 {
@@ -14,8 +14,8 @@ int main(void)
 		if (count % 3 == 0 || count % 5 == 0)
 			multiples += count;
 	}
-	printf("%d\n", count);
-	return(0);
+	printf("%d\n", multiples);
+	return (0);
 
 
 }
