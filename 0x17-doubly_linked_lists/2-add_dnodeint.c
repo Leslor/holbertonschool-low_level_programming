@@ -1,7 +1,7 @@
 #include "lists.h"
 
 /**
-  * add_nodeint - function that adds a new node
+  * add_dnodeint - function that adds a new node
   * at the beginning of a dlistint_t list
   * @head: head of the doubly linked list
   * @n: ...
@@ -18,6 +18,5 @@ dlistint_t *add_dnodeint(dlistint_t **head, const int n)
 	node->n = n;
 	node->next = *head;
 
-	*head = node;
-	return (*head);
+	return node;
 }
