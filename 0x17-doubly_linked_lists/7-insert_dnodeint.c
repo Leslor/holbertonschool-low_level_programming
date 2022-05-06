@@ -16,9 +16,7 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	dlistint_t *ptr = NULL;
 	dlistint_t *node = NULL;
 	unsigned int size;
-	/* validacion head */
 
-	/* creacion y validacion del nuevo nodo */
 	node = malloc(sizeof(dlistint_t));
 	if (node == NULL)
 	{
@@ -27,8 +25,7 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	}
 	node->n = n;
 	ptr = *h;
-	size = dlistint_len(*h); 
-	/* si el indice a insertar es el head */
+	size = dlistint_len(*h);
 	if (idx == 0)
 	{
 		node->next = *h;
@@ -47,4 +44,23 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	node->prev = ptr->next;
 	ptr->next = node;
 	return (node);
+}
+
+/**
+ * dlistint_len - function that returns the
+ * number of elements in a double linked list_t list.
+ *
+ * @h: head of the linked list
+ * Return: the number of elements in a linked list_t list.
+ */
+size_t dlistint_len(const dlistint_t *h)
+{
+	size_t counter = 0;
+	const dlistint_t *ptr = h;
+
+	for (; ptr != NULL; counter++)
+	{
+		ptr = ptr->next;
+	}
+	return (counter);
 }
