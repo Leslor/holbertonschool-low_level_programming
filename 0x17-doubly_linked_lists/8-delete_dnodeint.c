@@ -9,6 +9,7 @@
 int delete_first_dnode(dlistint_t **head)
 {
 	dlistint_t *current = *head, *temp = NULL;
+
 	temp = current;
 	if (current->next)
 	{
@@ -39,28 +40,53 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 {
 	dlistint_t *ptr = NULL;
 	dlistint_t *node = NULL;
+	unsigned int size;
 
 	ptr = *head;
 	node = *head;
 
 	if (*head == NULL || head == NULL)
 		return (-1);
-
-	/* si el indice a cambiar es el head */
 	if (index == 0)
 	{
-		return delete_first_dnode(head);
+		return (delete_first_dnode(head));
 	}
+	size = dlistint_len(*head);
+
 	while (--index)
 	{
 		ptr = ptr->next;
 		if (!ptr)
 			return (-1);
 	}
-	node = ptr->next;
-	ptr->prev = node->prev;
-	ptr->next = node->next;
+	if (size - 1 == index)
+	{
+	ptr->prev->next = ptr->next;
+	}
+	else
+	{
+		node = ptr->next;
+		ptr->prev = node->prev;
+		ptr->next = node->next;
+	}
 	free(node);
-
 	return (1);
+}
+/**
+ * dlistint_len - function that returns the
+ * number of elements in a double linked list_t list.
+ *
+ * @h: head of the linked list
+ * Return: the number of elements in a linked list_t list.
+ */
+size_t dlistint_len(const dlistint_t *h)
+{
+	size_t counter = 0;
+	const dlistint_t *ptr = h;
+
+	for (; ptr != NULL; counter++)
+	{
+		ptr = ptr->next;
+	}
+	return (counter);
 }
