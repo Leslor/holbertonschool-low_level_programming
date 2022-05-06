@@ -23,10 +23,14 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 		free(node);
 		return (NULL);
 	}
+	if (*h == NULL && idx == 0)
+	{
+		return (add_dnodeint(h, n));
+	}
 	node->n = n;
 	ptr = *h;
 	size = dlistint_len(*h);
-	if ((*h == NULL && idx == 0) || idx == 0)
+	if (*h == NULL && idx == 0)
 	{
 		return (add_dnodeint(h, n));
 	}
