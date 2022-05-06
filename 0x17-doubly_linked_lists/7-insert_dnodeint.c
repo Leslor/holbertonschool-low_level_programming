@@ -15,7 +15,7 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 {
 	dlistint_t *ptr = NULL;
 	dlistint_t *node = NULL;
-
+	unsigned int size;
 	/* validacion head */
 
 	/* creacion y validacion del nuevo nodo */
@@ -27,14 +27,16 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	}
 	node->n = n;
 	ptr = *h;
-
-	/* si el indice a cambiar es el head */
-	if (!idx)
+	size = dlistint_len(*h); 
+	/* si el indice a insertar es el head */
+	if (idx == 0)
 	{
 		node->next = *h;
 		*h = node;
 		return (node);
 	}
+	else if (size == idx)
+		return (add_dnodeint_end(h, n));
 	while (--idx)
 	{
 		if (ptr->next == NULL)
