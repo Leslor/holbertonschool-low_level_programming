@@ -3,6 +3,8 @@
 
 #include <stdlib.h>
 #include <stdio.h>
+#include <string.h>
+
 /**
   * struct dog - Dog attributes
   * @name: dog's name
