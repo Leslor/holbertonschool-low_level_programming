@@ -1,11 +1,9 @@
 #include "dog.h"
 
 /**
-  * new_dog -  function that copi the nae and the owner data of dog
-  * @name: Dog name
-  * @age: Dog age
-  * @owner: Dog owner
-  * Return: Return a Structure of the dog
+  * free_dog -  function that free the dog structure
+  * @d: pointer to Dog structure
+  * Return: ...
   */
 
 
@@ -24,7 +22,7 @@ void free_dog(dog_t *d)
 		free(d->name);
 	}
 	if (d->name && d->owner)
-	{	
+	{
 		free(d->name);
 		free(d->owner);
 	}
