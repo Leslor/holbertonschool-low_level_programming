@@ -1,24 +1,6 @@
 #include "dog.h"
 
 /**
- * _strlen -  function that returns the length of a string
- * @s: ..
- * Return: returns the length of a string
- */
-int _strlen(char *s)
-{
-	int i = 0;
-
-	while (*s != '\0')
-	{
-		i++;
-		s++;
-	}
-	return (i);
-}
-
-
-/**
   * new_dog -  function that copi the nae and the owner data of dog
   * @name: Dog name
   * @age: Dog age
@@ -36,21 +18,19 @@ dog_t *new_dog(char *name, float age, char *owner)
 	if (newdog == NULL)
 		return (NULL);
 
-	newdog->name = malloc(sizeof(char) * (_strlen(name) + 1));
+	newdog->name = strdup(name);
 	if (newdog->name == NULL)
 	{
 		free(newdog);
 		return (NULL);
 	}
-	newdog->owner = malloc(sizeof(char) * (_strlen(owner) + 1));
+	newdog->owner = strdup(owner);
 	if (newdog->owner == NULL)
 	{
 		free(newdog->name);
 		free(newdog);
 		return (NULL);
 	}
-	newdog->name = strcpy(newdog->name, name);
-	newdog->owner = strcpy(newdog->owner, owner);
 	newdog->age = age;
 
 	return (newdog);
