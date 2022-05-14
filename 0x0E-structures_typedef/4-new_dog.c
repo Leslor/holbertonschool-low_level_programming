@@ -1,17 +1,59 @@
-#include <stdio.h>
 #include "dog.h"
 
 /**
-  * print_dog -  function that prints a struct dog
-  * @d: Dog'structure.
-  * Description: Print the dog' struct
-  */
-void print_dog(struct dog *d)
+ * _strlen -  function that returns the length of a string
+ * @s: ..
+ * Return: returns the length of a string
+ */
+int _strlen(char *s)
 {
-	if (d != NULL)
+	int i = 0;
+
+	while (*s != '\0')
 	{
-		printf("Name: %s\n", (*d).name ? (*d).name : "(nil)");
-		printf("Age: %f\n", (*d).age ? (*d).age : 0);
-		printf("Owner: %s\n", (*d).owner ? (*d).owner : "(nil)");
+		i++;
+		s++;
 	}
+	return (i);
+}
+
+
+/**
+  * new_dog -  function that copi the nae and the owner data of dog
+  * @name: Dog name
+  * @age: Dog age
+  * @owner: Dog owner
+  * Return: Return a Structure of the dog
+  */
+dog_t *new_dog(char *name, float age, char *owner)
+{
+	dog_t *newdog;
+
+	if (name == NULL || age < 0 || owner == NULL)
+		return (NULL);
+
+	newdog = malloc(sizeof(dog_t));
+	if (newdog == NULL)
+		return (NULL);
+
+	newdog->name = malloc(sizeof(char) * (_strlen(name) + 1));
+	if (newdog->name == NULL)
+	{
+		free(newdog);
+		return (NULL);
+	}
+
+	newdog->owner = malloc(sizeof(char) * (_strlen(owner) + 1));
+	if (newdog->owner == NULL)
+	{
+		free(newdog);
+		free(newdog->name);
+		return (NULL);
+	}
+
+	newdog->name = name;
+	newdog->age = age;
+	newdog->owner = name;
+
+	return (newdog);
 }
