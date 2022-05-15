@@ -26,16 +26,13 @@ int **alloc_grid(int width, int height)
 		if (arrayTwoD[h] == NULL)
 		{
 			while (h >= 0)
-			{
-				free(arrayTwoD[h]);
-				h--;
-			}
+				free(arrayTwoD[h--]);
 			free(arrayTwoD);
 			return (NULL);
 		}
 	}
 
-	for (i = 0; i <= height; i++)
+	for (i = 0; i < height; i++)
 	{
 		for (j = 0; j < width; j++)
 			arrayTwoD[i][j] = 0;
