@@ -25,12 +25,7 @@ hash_node_t *ad_no_nd(hash_node_t **head, const char *key, const char *value)
 		return (NULL);
 	}
 	node_beg->value = malloc(sizeof(char) * strlen(value));
-	if (node_beg->value == NULL)
-	{
-		free(node_beg->key);
-		free(node_beg);
-		return (NULL);
-	}
+
 	node_beg->key = strcpy(node_beg->key, key);
 	node_beg->value = strcpy(node_beg->value, value);
 
