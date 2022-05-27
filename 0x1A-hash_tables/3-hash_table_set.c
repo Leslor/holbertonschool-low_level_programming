@@ -53,10 +53,6 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 
 	index = key_index((const unsigned char *)key, ht->size);
 
-	node = malloc(sizeof(hash_node_t));
-	if (node == 0)
-		return (0);
-
 	node = ad_no_nd(&(ht->array[index]), key, value);
 	if (node == NULL)
 		return (0);
