@@ -12,40 +12,31 @@
 hash_node_t *ad_no_nd(hash_node_t **head, const char *key, const char *value)
 {
 	/* creating the last nodo */
-	hash_node_t *last_node = malloc(sizeof(hash_node_t));
-	hash_node_t *ptr;
+	hash_node_t *node_beg = malloc(sizeof(hash_node_t));
 
 	/* validation */
-	if (last_node == NULL)
+	if (node_beg == NULL)
 		return (NULL);
-	ptr = *head;
-	if (*head == NULL)
-		*head = last_node;
-	else
-	{
-		while (ptr->next != NULL)
-			ptr = ptr->next;
-		ptr->next = last_node;
-	}
 
-	last_node->key =  malloc(sizeof(char) * strlen(key));
-	if (last_node->key == NULL)
+	node_beg->key =  malloc(sizeof(char) * strlen(key));
+	if (node_beg->key == NULL)
 	{
-		free(last_node);
+		free(node_beg);
 		return (NULL);
 	}
-	last_node->value = malloc(sizeof(char) * strlen(value));
-	if (last_node->value == NULL)
+	node_beg->value = malloc(sizeof(char) * strlen(value));
+	if (node_beg->value == NULL)
 	{
-		free(last_node->key);
-		free(last_node);
+		free(node_beg->key);
+		free(node_beg);
 		return (NULL);
 	}
-	last_node->key = strcpy(last_node->key, key);
-	last_node->value = strcpy(last_node->value, value);
+	node_beg->key = strcpy(node_beg->key, key);
+	node_beg->value = strcpy(node_beg->value, value);
 
-	last_node->next = NULL;
-	return (last_node);
+	node_beg->next = *head;
+	*head = node_beg;
+	return (node_beg);
 }
 
 
@@ -71,7 +62,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	if (node == 0)
 		return (0);
 
-	node = add_node_end(&(ht->array[index]), key, value);
+	node = ad_no_nd(&(ht->array[index]), key, value);
 	if (node == NULL)
 		return (0);
 	else
