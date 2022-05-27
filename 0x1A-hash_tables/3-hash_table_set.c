@@ -13,10 +13,21 @@ hash_node_t *ad_no_nd(hash_node_t **head, const char *key, const char *value)
 {
 	/* creating the last nodo */
 	hash_node_t *node_beg = malloc(sizeof(hash_node_t));
+	hash_node_t *tmp;
+
 
 	/* validation */
 	if (node_beg == NULL)
 		return (NULL);
+
+/* busqueda del key*/
+	tmp = *head;
+	while (tmp != NULL)
+	{
+		if (strcmp(tmp->key, key) == 0)
+			return (NULL);
+		tmp = tmp->next;
+	}
 
 	node_beg->key =  malloc(sizeof(char) * strlen(key));
 	if (node_beg->key == NULL)
