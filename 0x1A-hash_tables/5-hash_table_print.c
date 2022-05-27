@@ -24,9 +24,14 @@ void hash_table_print(const hash_table_t *ht)
 		for (tmp = ht->array[index]; tmp; tmp = tmp->next)
 		{
 			printf("'%s': '%s'", tmp->key, tmp->value);
+			if (tmp->next)
+			{
+				printf(",");
+			}
 		}
-		if(index != ) 
-	}
+		if (ht->array[index] != NULL)
+			printf(",");
+	
 	printf("}");
 	printf("\n");
 }
