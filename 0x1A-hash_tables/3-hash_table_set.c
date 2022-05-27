@@ -25,7 +25,11 @@ hash_node_t *ad_no_nd(hash_node_t **head, const char *key, const char *value)
 	while (tmp != NULL)
 	{
 		if (strcmp(tmp->key, key) == 0)
-			return (NULL);
+		{
+			free(tmp->value);
+			tmp->value = strdup(value);
+			return (tmp);
+		}
 		tmp = tmp->next;
 	}
 
@@ -44,7 +48,6 @@ hash_node_t *ad_no_nd(hash_node_t **head, const char *key, const char *value)
 	*head = node_beg;
 	return (node_beg);
 }
-
 
 /**
  * hash_table_set - function that adds an element to the hash table.
