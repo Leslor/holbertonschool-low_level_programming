@@ -41,5 +41,6 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	node->key = strcpy(node->key, key);
 	node->key = strcpy(node->value, value);
 
+	node->next = NULL;
 	return (1);
 }
