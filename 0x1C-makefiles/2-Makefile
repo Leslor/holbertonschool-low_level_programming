@@ -1,0 +1,10 @@
+# build an executable file
+CC = gcc
+SRC = main.c school.c
+OBJ = main.o school.o
+NAME = school
+all: $(OBJ)
+	$(CC) $(SRC) -o $(NAME)
+
+main.o : main.c school.c m.h
+school.o : school.c main.c m.h
