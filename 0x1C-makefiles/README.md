@@ -1,15 +1,13 @@
-# C - Sorting algorithms & Big O
+# 0x1C. C - Makefiles
+In this project, we have implemented a make file.
 
-In this project, we have implemented different sorting algorithms.
+![BigO_img](https://i.ytimg.com/vi/_r7i5X0rXJk/maxresdefault.jpg)
 
-![BigO_img](https://cankube.files.wordpress.com/2020/02/bigonotation.jpeg)
+## Requirements
 
-## Resources
-
-* Sorting algorithm
-* Big O notation
-* Sorting algorithms animations
-* 15 sorting algorithms in 6 minutes
+* OS: Ubuntu 20.04 LTS
+* Version of gcc: 9.3.0
+* Version of make: GNU Make 4.2.1
 
 ## Big O complexity in differents sorting algorithms:
 
