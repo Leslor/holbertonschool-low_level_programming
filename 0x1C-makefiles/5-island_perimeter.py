@@ -6,11 +6,14 @@ def island_perimeter(grid):
     """Function that returns the perimeter
         of an island described in grid """
 
-    perimeter, tmp, num_1 = 0, 0, 0
+    perimeter, tmp, num_1, index = 0, 0, 0, 0
     for row in grid:
         num_1 = row.count(1)
         if num_1 > 0:
             perimeter += 2
+            index = row.index(1)
+            if num_1 > 1 and row[index + 1] != 1:
+                perimeter += 2
         if num_1 > tmp:
             answer = num_1 - tmp
             perimeter += answer
